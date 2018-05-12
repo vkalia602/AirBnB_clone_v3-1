@@ -91,4 +91,4 @@ if __name__ == "__main__":
     # initializes global error handling
     setup_global_errors()
     # start Flask app
-    app.run(host=host, port=port)
+    app.run(host=host, port=int(port))
