@@ -15,11 +15,14 @@ $(document).ready(() => {
 		$("#amenities").text(names.toString());
 	});
 
-	$.get('http://0.0.0.0:5001/api/v1/status/', (data, code) => {
-		if (code === 200) {
-			$('DIV#api_status').addClass('available');
+	$.getJSON('http://0.0.0.0:5001/api/v1/status/', (data) => {
+		console.log(data.status);
+		if (data.status === "OK") {
+			console.log("WOW");
+			$('#api_status').addClass('available');
 		} else {
-			$('DIV#api_status').removeClass('available');
+			console.log('NO');
+			$('#api_status').removeClass('available');
 		}
 	});
 });
