@@ -12,3 +12,11 @@ header {
 	width: 100%;
 	border-bottom: 1px solid #CCCCCC;
 }
+#api_status{
+        text-align: right;
+	border-right: 30px
+	background-color: #CCCCCC
+}
+.available {
+        background-color: #FF545F;
+}
