@@ -17,6 +17,12 @@ display: flex;
 	position: relative;
 }
 
+#amenities {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
 .container .filters .locations {
 	width: 25%;
 	border-right: 1px solid #DDDDDD;
