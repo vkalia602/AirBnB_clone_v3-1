@@ -36,40 +36,41 @@ $(document).ready(() => {
     });
 
 function printdata(data){
+    let places_list = []
     for (i = 0; i < data.length; i++){
-	<article>
-	        <div class="title">
-
+	let place = `
+	    <ARTICLE>
+            <div class="title">
 	      <h2>${data[i].name}</h2>
 
 	      <div class="price_by_night">${data[i].price_by_night}</div>
-	        </div>
-	        <div class="information">
-	          <div class="max_guest">
+	    </div>
+	    <div class="information">
+	    <div class="max_guest">
 	    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
 
-	<br />
-
-	
-
-	      </div>
-	          <div class="number_rooms">
+	    <br />
+	    ${data[i].max_guest}
+	</div>
+	    <div class="number_rooms">
 	    <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+	    <br />
 
-	<br />
-
-	{{ place.number_rooms }} Bedrooms
-	      </div>
-	          <div class="number_bathrooms">
+	${ data[i].number_rooms} Bedrooms
+	</div>
+	    <div class="number_bathrooms">
 	    <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+	    <br />
 
-	<br />
-
-	{{ place.number_bathrooms }} Bathroom
-
-	      </div>
-	        </div>
-	    </article>
+	${data[i].number_bathrooms} Bathroom
+	</div>
+	    </div>
+	    <div class="description">
+	    ${data[i].description}
+	</div>
+	    </ARTICLE>`;
+	places_list.push(place);
     }
+    $('.places').append(places_list)
 }
 });
